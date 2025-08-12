@@ -1,7 +1,8 @@
-ENV['SINATRA_ENV'] ||= "development"
+ENV['RAILS_ENV'] ||= "development"
 
 require 'bundler/setup'
-Bundler.require(:default, ENV['SINATRA_ENV'])
+Bundler.require(:default, ENV['RAILS_ENV'])
 
-require './app'
-require_all 'models'
+# Load models and controllers
+Dir[File.join(File.dirname(__FILE__), '../models', '*.rb')].each { |file| require file }
+require_relative '../app'

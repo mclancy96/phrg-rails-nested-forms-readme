@@ -1,14 +1,10 @@
 source "https://rubygems.org"
 
-gem "sinatra"
+gem "rails", "~> 7.0"
 gem "rake"
-gem "thin"
-gem "shotgun"
 gem "pry"
-gem "require_all"
 
 group :test do
-  gem "rspec"
+  gem "rspec-rails"
   gem "capybara"
-  gem "rack-test"
 end
